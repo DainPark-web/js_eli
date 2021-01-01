@@ -78,3 +78,58 @@ let obj2 = {
 obj2.name = "kd";
 console.log(obj2.name);
 
+
+class Get1{
+
+    constructor(id,password){
+        this.id = id;
+        this.pass = password;
+    }
+
+    get pass(){
+       return this._pass;
+    }
+
+    set pass(v){
+       this._pass = v === "12345" ? "right" : "wrong";
+    }
+
+    
+}
+
+const result1 = new Get1('dain', '12345');
+console.log(result1.pass);
+
+class Get2{
+
+    constructor(age){
+        this.age = age;
+    }
+
+    get age(){
+        return this._age;
+    }
+
+    set age(v){
+        this._age = v < 0 ? 0 : v;
+    }
+}
+
+const result2 = new Get2(-4);
+console.log(result2.age);
+
+class Get3{
+    constructor(age){
+        this.age = age;
+    }
+
+    get age(){
+        return this._age;
+    }
+    set age(v){
+        this._age = v < 0 ? "hey who the fuck are you" : v;
+    }
+}
+
+const result3 = new Get3(10);
+console.log(result3.age);
